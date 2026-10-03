@@ -1,0 +1,19 @@
+ENTREGA ACTIVIDAD FORMATIVA: GITHUB COPILOT
+
+Estudiante: Benjamín
+Usuario GitHub: BenjaminDuarte67
+Institución: INACAP
+Sede: Maipú
+Actividad: Actividad Formativa: GitHub Copilot
+Unidad: Inteligencia Artificial basada en prompt
+Fecha: 03 de octubre de 2026
+
+ENLACE DEL REPOSITORIO:
+https://github.com/BenjaminDuarte67/AI_Project
+
+DESCRIPCIÓN BREVE:
+Se desarrolló un sistema de recomendación simple en Python utilizando Visual Studio Code y GitHub Copilot. El proyecto fue almacenado en un repositorio de GitHub y se utilizó Copilot para incorporar una función que explica el motivo de cada recomendación según los intereses ingresados por el usuario.
+
+El programa fue ejecutado correctamente en Python y los cambios fueron registrados mediante commit y posteriormente sincronizados con el repositorio remoto en GitHub.
+
+El repositorio contiene el código principal, los datos de ejemplo, el archivo README, la configuración .gitignore y el historial de commits correspondiente al desarrollo de la actividad.

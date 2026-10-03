@@ -58,6 +58,22 @@ def score_product(
     return score, matches
 
 
+def explain_recommendation(product: dict[str, str], matches: Iterable[str]) -> str:
+    """Explica qué intereses coincidieron y en qué campos del producto."""
+    fields = {
+        "nombre": set(normalize(product.get("name", ""))),
+        "categoría": set(normalize(product.get("category", ""))),
+        "etiquetas": set(normalize(product.get("tags", ""))),
+    }
+    details = []
+
+    for interest in matches:
+        locations = [name for name, terms in fields.items() if interest in terms]
+        details.append(f"{interest} ({', '.join(locations)})")
+
+    return f"Recomendado porque coincide con tus intereses en: {', '.join(details)}."
+
+
 def recommend(
     products: list[dict[str, str]],
     user_interests: str,
@@ -75,6 +91,7 @@ def recommend(
                     "product": product,
                     "score": score,
                     "matches": matches,
+                    "explanation": explain_recommendation(product, matches),
                 }
             )
 
@@ -135,6 +152,7 @@ def main() -> None:
             f"{index}. {product['name']} - Puntaje: {item['score']}\n"
             f"   Categoría: {product['category']}\n"
             f"   Coincidencias: {', '.join(matches)}\n"
+            f"   Motivo: {item['explanation']}\n"
             f"   Precio referencial: {product['price']}\n"
         )
 
